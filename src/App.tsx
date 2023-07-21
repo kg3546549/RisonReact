@@ -14,13 +14,17 @@ import Carousel from 'react-material-ui-carousel';
 
 import TodayHotView from './View/MainView/TodayHotView';
 
-
+import AdvImg1 from './assets/Advertising1.png'
+import AdvImg2 from './assets/Advertising2.png'
+import Container from '@mui/material/Container'
+import { makeStyles, createStyles } from "@mui/material/styles";
+import { ClassNames } from '@emotion/react';
 
 const pages = ['머시기', '머시기2', '3']
 
-function App() {
-  
 
+
+function App() {
 
   return (
     
@@ -62,10 +66,38 @@ function App() {
           </Toolbar>
         </AppBar>
 
-        <Carousel height={400}>
-            <Typography variant='h6'>1</Typography>
-            <Typography variant='h6'>2</Typography>
-            <Typography variant='h6'>3</Typography>
+        <Carousel height={500}>
+          <img 
+              src={AdvImg1} height={500}
+              style={{
+                margin : 'auto',
+                position : 'absolute',
+                top: '50%',
+                left : '50%',
+                transform : "translate(-50%,-50%)"
+              }}
+            />
+            <img 
+              src={AdvImg2} height={500}
+              style={{
+                width : '100%',
+                margin : 'auto',
+                position : 'absolute',
+                top: '50%',
+                left : '50%',
+                transform : "translate(-50%,-50%)"
+              }}
+            />
+            <img 
+              src={AdvImg1} height={500}
+              style={{
+                margin : 'auto',
+                position : 'absolute',
+                top: '50%',
+                left : '50%',
+                transform : "translate(-50%,-50%)"
+              }}
+            />   
         </Carousel>
         <Box height={30}></Box>
         <TodayHotView/>

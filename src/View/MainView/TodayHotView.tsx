@@ -1,21 +1,38 @@
-import { Paper, List, ListItem,ListItemText, Box, Grid, Typography, Button, ButtonGroup, Container, MenuItem } from "@mui/material";
+import { Card, CardMedia, CardContent,Paper, List, ListItem,ListItemText, Box, Grid, Typography, Button, ButtonGroup, Container, MenuItem, ButtonBase } from "@mui/material";
 import Carousel from 'react-material-ui-carousel';
+import TestImage from '../../assets/TestImage.jpg'
 
 
 function ListTile() {
-    return (
-    <Box>
-        <Grid container spacing={2}>
-            <Grid item xs={4} height={150} width={300}>
-                IMAGE1
-            </Grid>
-            <Grid item xs={8}>
-                <ListItem>
-                    <ListItemText primary="AAA" secondary="secondary"/>
-                </ListItem>
-            </Grid>
-        </Grid>
+    return(
+
+    <Box margin={2}>
+        <Card sx={{ display: 'flex' }} elevation={3}
+            style={{
+                cursor : 'pointer'
+            }}
+            onClick={()=>{console.log("A")}}
+        >
+        <CardMedia
+            component="img"
+            sx={{ width: 151 }}
+            image={TestImage}
+            alt="TestImage"
+        />
+        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+            <CardContent sx={{ flex: '1 0 auto' }}>
+            <Typography component="div" variant="h5">
+                Title
+            </Typography>
+            <Typography variant="subtitle1" color="text.secondary" component="div">
+                Author
+            </Typography>
+            </CardContent>
+        </Box>
+        
+        </Card>
     </Box>
+
     );
 }
 
@@ -24,7 +41,7 @@ function TodayHotView() {
 
     return(
         <Container>
-            <Paper elevation={3} >
+            
             <Grid container spacing={2} paddingLeft={5} paddingRight={5} paddingBottom={5} paddingTop={2}>
                 <Grid item xs={10}>
                     <Typography variant="h5" >
@@ -34,7 +51,7 @@ function TodayHotView() {
                 <Grid item xs={2}>
                     
                 </Grid>
-                
+
                 {/* {Next Line} */}
 
                 <Grid item xs={2}>
@@ -63,7 +80,7 @@ function TodayHotView() {
 
 
                 <Grid item xs={6}>
-                    <Carousel height={600} autoPlay={false} animation="slide">
+                    <Carousel height={500} autoPlay={false} animation="slide">
                         <List>
                             {[ListTile(),ListTile(),ListTile(),ListTile()]}
                         </List>
@@ -77,17 +94,23 @@ function TodayHotView() {
                     </Carousel>
                 </Grid>
                 <Grid item xs={6}>
-                    <Carousel height={500}>
-                        <MenuItem> 1 </MenuItem>
-                        <MenuItem> 2 </MenuItem>
-                        <MenuItem> 3 </MenuItem>
-                        <MenuItem> 4 </MenuItem>
+                    <Carousel height={500} autoPlay={false} animation="slide">
+                        <List>
+                            {[ListTile(),ListTile(),ListTile(),ListTile()]}
+                        </List>
+                        <List>
+                            {[ListTile(),ListTile(),ListTile(),ListTile()]}
+                        </List>
+                        <List>
+                            {[ListTile(),ListTile(),ListTile(),ListTile()]}
+                        </List>
+
                     </Carousel>
                 </Grid>
                 
 
             </Grid>
-            </Paper>
+            
         </Container>
     );
 
