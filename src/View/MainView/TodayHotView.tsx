@@ -1,17 +1,25 @@
 import { Card, CardMedia, CardContent,Paper, List, ListItem,ListItemText, Box, Grid, Typography, Button, ButtonGroup, Container, MenuItem, ButtonBase } from "@mui/material";
 import Carousel from 'react-material-ui-carousel';
 import TestImage from '../../assets/TestImage.jpg'
+import { useNavigate } from 'react-router-dom';
 
 
 function ListTile() {
+    const navigate = useNavigate();
     return(
 
     <Box margin={2}>
         <Card sx={{ display: 'flex' }} elevation={3}
             style={{
-                cursor : 'pointer'
+                cursor : 'pointer',
+                // borderRadius : 10,
             }}
-            onClick={()=>{console.log("A")}}
+            onClick={
+                ()=>{
+                    navigate('/ComicDetail');
+                }
+            }
+            
         >
         <CardMedia
             component="img"
@@ -54,18 +62,18 @@ function TodayHotView() {
 
                 {/* {Next Line} */}
 
-                <Grid item xs={2}>
+                <Grid item xs={12}>
                     <ButtonGroup variant="contained" color="primary" aria-label="">
                         <Button variant="contained" color="primary">
-                        전체
+                            전체
                         </Button>
                         <Button variant="contained" color="inherit">
-                        무료
+                            무료
                         </Button>
                     </ButtonGroup>
                     
                 </Grid>
-                <Grid item xs={10}/>
+                
 
 
                 {/* {Next Line} */}

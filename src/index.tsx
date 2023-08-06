@@ -4,18 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import {theme} from './Theme/Theme'
 
-const theme = createTheme({
-	palette: {
-      primary: {
-        main: "#f2f0eb",
-      },
-      secondary: {
-        main: "#fcba03",
-      }
-
-    }
-});
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
