@@ -12,7 +12,7 @@ function EpisodeListTile(epiNum:number) {
   return(
     <Box onClick={
       ()=>{
-        navigate('/ComicsRead');
+        navigate('/ComicsRead?titleId=1&no='+epiNum);
       }
     }>
     <Card elevation={0} sx={{ display: 'flex' ,borderRadius: 3}} 
@@ -69,7 +69,7 @@ function EpisodeListTile(epiNum:number) {
 
 function ComicDetailView() {
 
-  let episode1:number[] = Array.from(Array(40).keys()).map(v=>v+1);
+  let episode1:number[] = Array.from(Array(12).keys()).map(v=>v+1);
 
   return(
       <Box padding={3}>
@@ -79,8 +79,8 @@ function ComicDetailView() {
             <Grid item xs={2}>
               <Box>
               <img 
-                  src={Image}
-                  style={{ maxWidth: "100%" }}
+                  src='http://kg3546549.duckdns.org:3030/Taiyou%20no%20ie/thumbnail.webp'
+                  style={{ maxWidth: "110%" }}
               />
               </Box>
             </Grid>
@@ -89,7 +89,7 @@ function ComicDetailView() {
               <Grid container spacing={1}>
                   <Grid item xs={12}>
                       <Typography variant="h5" fontWeight={700}>
-                          외모지상주의
+                          태양의 집
                       </Typography>
                   </Grid>
                   <Grid item xs={12}>
@@ -104,8 +104,7 @@ function ComicDetailView() {
 
                   <Grid item xs={12}>
                       <Typography variant="body2" fontWeight={600}>
-                          못생기고 뚱뚱하다고 괴롭힘을 당하며 루저 인생만 살아온 내가 잘생겨졌다는 이유로 인싸가 됐다.
-                          어느 날 자고 일어났더니 갑자기 완벽한 외모와 몸을 지닌 사람이 되어 깨어난다면?
+                      어릴 적 앞집 히로네 집에서 늘 시간을 보냈던 마오. 그 집에 가면 항상 기운을 차릴 수 있었으니까. 몇 년 후… 아빠의 재혼으로 더 이상 집에 있을 수 없게 된 마오는 부모님이 세상을 떠난 후 홀로 집을 지키고 있는 히로의 집에 함께 머물게 되는데…?! 연상연하 소꿉친구 두 사람의 밝고도 애달픈 동거일기♡
                       </Typography>
                       
                   </Grid>
