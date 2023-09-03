@@ -13,7 +13,6 @@ export const theme = createTheme({
       secondary: {
         main: "#fcba03",
       }
-
     }
 });
 

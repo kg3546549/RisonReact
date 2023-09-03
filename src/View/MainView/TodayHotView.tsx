@@ -49,7 +49,6 @@ function TodayHotView() {
 
     return(
         <Container>
-            
             <Grid container spacing={2} paddingLeft={5} paddingRight={5} paddingBottom={5} paddingTop={2}>
                 <Grid item xs={10}>
                     <Typography variant="h5" >

@@ -4,15 +4,28 @@ import { Link } from 'react-router-dom'
 import Image from 'assets/thumbnail.jpg'
 import EpisodeThumbnail from 'assets/EpisodeThumbnail.jpg'
 import Button from '@mui/material/Button'
+import { useNavigate } from 'react-router-dom';
 
 function EpisodeListTile(epiNum:number) {
-  
+  const navigate = useNavigate();
+
   return(
-    <Card elevation={0} sx={{ display: 'flex' ,borderRadius: 3}} >
+    <Box onClick={
+      ()=>{
+        navigate('/ComicsRead');
+      }
+    }>
+    <Card elevation={0} sx={{ display: 'flex' ,borderRadius: 3}} 
+      style={{
+        cursor : 'pointer',
+        // borderRadius : 10,
+      }}
+    >
       <CardMedia
         component="img"
         sx={{ width: 150,  }}
         image={EpisodeThumbnail}
+        
       >
 
       </CardMedia>
@@ -21,7 +34,18 @@ function EpisodeListTile(epiNum:number) {
         
       >
         <Box padding={1}>
-        <Typography component="div" variant="h6" fontWeight={600}>
+        <Typography 
+          component="div" variant="h6" fontWeight={600}
+          style={{
+            cursor : 'pointer',
+            // borderRadius : 10,
+          }}
+          onClick={
+            ()=>{
+              navigate('/ComicsRead');
+            }
+          }
+        >
           {epiNum}화 : ???
         </Typography>
         
@@ -36,6 +60,7 @@ function EpisodeListTile(epiNum:number) {
       </CardContent>  
 
     </Card>
+    </Box>
   );
 }
 
@@ -44,7 +69,7 @@ function EpisodeListTile(epiNum:number) {
 
 function ComicDetailView() {
 
-  let episode1:number[] = Array.from(Array(100).keys()).map(v=>v);
+  let episode1:number[] = Array.from(Array(40).keys()).map(v=>v+1);
 
   return(
       <Box padding={3}>

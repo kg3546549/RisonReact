@@ -1,9 +1,15 @@
-import {Typography,Button, Box, IconButton, Tooltip, MenuItem,Menu, Paper,   } from '@mui/material'
+import {Typography,Button, Box, IconButton, Tooltip, MenuItem,Menu, Paper, Container   } from '@mui/material'
 
 import { ClassNames } from '@emotion/react';
 
-//nuka-carousel
-import Carousel from "nuka-carousel";
+// Swiper
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 import AdvImg1 from 'assets/Advertising1.png'
 import AdvImg2 from 'assets/Advertising1.png'
@@ -21,24 +27,46 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 const AdverImgs = [AdvImg1, AdvImg2, AdvImg3];
 
 function MainView() {
+
+
+
     const classes = useStyles()
     return (
         <Fragment>
             {/* Advertising Carousel */}
-            <Carousel height={500}>
+            <Box height={5}></Box>
+            <Container>
+            <Swiper
+                
+                style={{
+                    height: 400,
+                }}
+                loop={true}
+                modules={[Autoplay, Navigation, Pagination]}
+                navigation 
+                pagination={{ clickable: true }}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+            >
                 {
-                AdverImgs.map((Img) => (
-                    <img
-                    src={Img}
-                    className={classes.AdvertisingImg}
-                    />
-                ))
+                AdverImgs.map((Img, index) => (
+                    <SwiperSlide>
+                        <img
+                            src={Img}
+                            className={classes.AdvertisingImg}
+                        />
+                    </SwiperSlide>
+                    ))
                 } 
-            </Carousel>
+            </Swiper>
+            
             
             <Box height={30}></Box>
             <TodayHotView/>
             <Box height={500}></Box>
+        </Container>
         </Fragment>
     );
 }
