@@ -11,3 +11,4 @@ export default class Comic {
         this.star = star;
     }
 }
+

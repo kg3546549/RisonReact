@@ -27,7 +27,6 @@ function App() {
             <Route path="/Hot" element={<TodayHotView/>}/>
             <Route path="/AllComics" element={<AllComicsView/>}/>
             <Route path="/ComicDetail" element={<ComicDetailView/>}/>
-            <Route path="/A" element={<ComicDetailView/>}/>
             <Route path="/ComicsRead" element={<ReadComicsView/>}/>
           </Routes>
           

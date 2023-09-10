@@ -1,18 +1,22 @@
-import { Fragment } from "react";
+import { Fragment, useState, useEffect } from "react";
 import {Rating, CardMedia, Card, Divider, Stack, Grid, Container, Box, Typography, CardContent} from '@mui/material/'
 import { Link } from 'react-router-dom'
 import Image from 'assets/thumbnail.jpg'
 import EpisodeThumbnail from 'assets/EpisodeThumbnail.jpg'
 import Button from '@mui/material/Button'
-import { useNavigate } from 'react-router-dom';
 
-function EpisodeListTile(epiNum:number) {
-  const navigate = useNavigate();
+import { useNavigate, useSearchParams } from 'react-router-dom';
+
+import ComicDetailJSON from 'Model/ComicDetailJSONModel'
+import EpisodesModel from 'Model/EpisodesModel'
+
+function EpisodeListTile(titleId:number, episode:EpisodesModel, navigate:Function) {
+  // 
 
   return(
     <Box onClick={
       ()=>{
-        navigate('/ComicsRead?titleId=1&no='+epiNum);
+        navigate(`/ComicsRead?titleId=${titleId}&no=${episode.cid}`);
       }
     }>
     <Card elevation={0} sx={{ display: 'flex' ,borderRadius: 3}} 
@@ -24,7 +28,7 @@ function EpisodeListTile(epiNum:number) {
       <CardMedia
         component="img"
         sx={{ width: 150,  }}
-        image={EpisodeThumbnail}
+        image={episode.thumnail}
         
       >
 
@@ -46,7 +50,7 @@ function EpisodeListTile(epiNum:number) {
             }
           }
         >
-          {epiNum}화 : ???
+          {episode.cid}화 : {episode.title}
         </Typography>
         
         <Stack direction={"row"}>
@@ -64,88 +68,129 @@ function EpisodeListTile(epiNum:number) {
   );
 }
 
-
-
-
 function ComicDetailView() {
+  const navigate = useNavigate();
+  // let episode1:number[] = Array.from(Array(12).keys()).map(v=>v+1);
+  let [query, setQuery] = useSearchParams();
+	const [comicsDetail, setComicsDetail] = useState<ComicDetailJSON>();
 
-  let episode1:number[] = Array.from(Array(12).keys()).map(v=>v+1);
+  const [isFetched, setIsFetched] = useState(false);
+	
+	let titleId1:any;
 
-  return(
-      <Box padding={3}>
-        <Container>
-      
-          <Grid container spacing={2}>
-            <Grid item xs={2}>
-              <Box>
-              <img 
-                  src='http://kg3546549.duckdns.org:3030/Taiyou%20no%20ie/thumbnail.webp'
-                  style={{ maxWidth: "110%" }}
-              />
-              </Box>
-            </Grid>
-            <Grid item xs={9}>
+  const URL = `http://ec2-43-201-111-91.ap-northeast-2.compute.amazonaws.com:8080/`;
+  const API = `api/comic/getComicDetailByNo`;
+  const TESTURL = `https://reqbin.com/echo/get/json`
+  useEffect(()=> {
+    titleId1 = query.get("titleId");
+    fetch(`${URL}${API}?comicNo=${titleId1}`, {
+        method : "GET"   
+    })
+    .then(res=>res.json())
+    .then(res=>{
+      console.log("Fetch Complete : ")
+      console.log(res);
 
-              <Grid container spacing={1}>
-                  <Grid item xs={12}>
-                      <Typography variant="h5" fontWeight={700}>
-                          태양의 집
-                      </Typography>
-                  </Grid>
-                  <Grid item xs={12}>
-                      <Typography variant="body2" color="text.secondary">
-                          {"글/그림 > "}
-                          <Link to="" color="text.first">박태준</Link>
-                          {"  |   15세 이용가"}
-                      </Typography>
-                      
-                      
-                  </Grid>
+      setComicsDetail(res);
+      setIsFetched(true);
+    });         
 
-                  <Grid item xs={12}>
-                      <Typography variant="body2" fontWeight={600}>
-                      어릴 적 앞집 히로네 집에서 늘 시간을 보냈던 마오. 그 집에 가면 항상 기운을 차릴 수 있었으니까. 몇 년 후… 아빠의 재혼으로 더 이상 집에 있을 수 없게 된 마오는 부모님이 세상을 떠난 후 홀로 집을 지키고 있는 히로의 집에 함께 머물게 되는데…?! 연상연하 소꿉친구 두 사람의 밝고도 애달픈 동거일기♡
-                      </Typography>
-                      
-                  </Grid>
+  }, []);
+  
+  if(isFetched==true) { 
+    return(
+        <Box padding={3}>
+          <Container>
+        
+            <Grid container spacing={5}>
+              <Grid item xs={2}>
+                <Box>
+                <img 
+                    src={comicsDetail?.comicInfo.thumbnail}
+                    style={{ maxWidth: "110%" }}
+                />
+                </Box>
+              </Grid>
+              <Grid item xs={9}>
+
+                <Grid container spacing={1}>
+                    <Grid item xs={12}>
+                        <Typography variant="h5" fontWeight={700}>
+                            {comicsDetail?.comicInfo.title}
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Typography variant="body2" color="text.secondary">
+                            {"글/그림 > "}
+                            <Link to="" color="text.first">박태준</Link>
+                            {"  |   15세 이용가"}
+                        </Typography>
+                        
+                        
+                    </Grid>
+
+                    <Grid item xs={12}>
+                        <Typography variant="body2" fontWeight={600}>
+                        람쥐썬더!!!<br/>
+                        람쥐썬더!!!
+                        람쥐썬더!!!
+                        람쥐썬더!!!
+                        람쥐썬더!!!
+                        </Typography>
+                        
+                    </Grid>
+                </Grid>
               </Grid>
             </Grid>
-          </Grid>
-          
-          <Box height={20}/>
+            
+            <Box height={20}/>
 
-          <Grid container spacing={3} justifyContent="center">
-            <Grid item xs={6}>
-              <Button variant="contained" color="primary">
-                <Typography variant="body2"> 최근에 보던 화부터 이어보기 </Typography>
-              </Button>
+            <Grid container spacing={3} justifyContent="center">
+              <Grid item xs={6}>
+                <Button variant="contained" color="primary">
+                  <Typography variant="body2"> 최근에 보던 화부터 이어보기 </Typography>
+                </Button>
+              </Grid>
+              <Grid item xs={6}>
+                <Button variant="contained" color="primary">
+                  <Typography variant="body2"> 최근에 보던 화부터 이어보기 </Typography>
+                </Button>
+              </Grid>
             </Grid>
-            <Grid item xs={6}>
-              <Button variant="contained" color="primary">
-                <Typography variant="body2"> 최근에 보던 화부터 이어보기 </Typography>
-              </Button>
-            </Grid>
-          </Grid>
-          
-          <Box height={20}/>
+            
+            <Box height={20}/>
 
-          <Stack
-            direction="column"
-            divider={
-              <Divider  />
-            }
-            spacing={0.5}
-          >
+            <Stack
+              direction="column"
+              divider={
+                <Divider  />
+              }
+              spacing={0.5}
+            >
 
-            {
-              episode1.map((i)=>EpisodeListTile(i))
-            }
-          </Stack>
+              {
+                // episode1.map(
+                //   (i)=>EpisodeListTile(i)
+                // )
+                comicsDetail?.episodes.map(
+                  (data)=>EpisodeListTile(comicsDetail.comicInfo.id,data,navigate)
+                )
+              }
+            </Stack>
 
 
-          </Container>
-      </Box>
-  );
+            </Container>
+        </Box>
+    );
+  }
+  else {
+    console.log("not Yet")
+    return (
+      <div>
+        rendering
+      </div>
+    );
+  }
 }
 
 

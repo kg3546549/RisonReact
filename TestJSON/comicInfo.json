@@ -1,0 +1,29 @@
+{
+  "comicInfo": {
+    "comicId": 1,
+    "title": "람쥐",
+    "thumbnail": "https://cdnimg.melon.co.kr/svc/user_images/plylst/2021/06/456/23/485219505_org.jpg?tm=20230528080413/melon/resize/500/quality/90/optimize",
+    "authorID": 1,
+    "lastUpdate": "2023-09-05T01:34:42.477622",
+    "viewCount": 0,
+    "niceCount": 0
+  },
+  "episodes" : [
+    {
+      "title": "람쥐 의 서브타이틀1",
+      "thumnail": null,
+      "viewCount": 0,
+      "niceCount": 0,
+      "adultOnly": false,
+      "cdatailNo": 1
+    },
+    {
+      "title": "람쥐 의 서브타이틀2",
+      "thumnail": null,
+      "viewCount": 0,
+      "niceCount": 0,
+      "adultOnly": false,
+      "cdatailNo": 2
+    }
+  ]
+}
