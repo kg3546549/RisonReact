@@ -78,12 +78,13 @@ function ComicDetailView() {
 	
 	let titleId1:any;
 
-  const URL = `http://ec2-43-201-111-91.ap-northeast-2.compute.amazonaws.com:8080/`;
-  const API = `api/comic/getComicDetailByNo`;
-  const TESTURL = `https://reqbin.com/echo/get/json`
+  const URL = process.env.REACT_APP_SERVER_URL
+  const API_URL = process.env.REACT_APP_API_URL
+  const API = `getComicDetailByNo`;
+
   useEffect(()=> {
     titleId1 = query.get("titleId");
-    fetch(`${URL}${API}?comicNo=${titleId1}`, {
+    fetch(`${URL}${API_URL}${API}?comicNo=${titleId1}`, {
         method : "GET"   
     })
     .then(res=>res.json())

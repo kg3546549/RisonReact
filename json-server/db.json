@@ -1,0 +1,86 @@
+{
+  "getAllComicList": {
+    "comicListCount": 4,
+    "comicList": [
+      {
+        "id": 1,
+        "title": "람쥐",
+        "thumbnail": "https://cdnimg.melon.co.kr/svc/user_images/plylst/2021/06/456/23/485219505_org.jpg?tm=20230528080413/melon/resize/500/quality/90/optimize",
+        "authorID": 1,
+        "lastUpdate": "2023-09-09T15:26:45.250627",
+        "viewCount": 0,
+        "niceCount": 0,
+        "tag": ["공포"]
+      },
+      {
+        "id": 2,
+        "title": "팤람쥐",
+        "thumbnail": "https://cdnimg.melon.co.kr/svc/user_images/plylst/2021/06/456/23/485219505_org.jpg?tm=20230528080413/melon/resize/500/quality/90/optimize",
+        "authorID": 1,
+        "lastUpdate": "2023-09-09T15:26:45.379965",
+        "viewCount": 0,
+        "niceCount": 0,
+        "tag": ["액션"]
+      },
+      {
+        "id": 3,
+        "title": "다람쥐",
+        "thumbnail": "https://cdnimg.melon.co.kr/svc/user_images/plylst/2021/06/456/23/485219505_org.jpg?tm=20230528080413/melon/resize/500/quality/90/optimize",
+        "authorID": 1,
+        "lastUpdate": "2023-09-09T15:26:45.403206",
+        "viewCount": 0,
+        "niceCount": 0,
+        "tag": ["스릴러"]
+      },
+      {
+        "id": 4,
+        "title": "기타",
+        "thumbnail": "https://cdnimg.melon.co.kr/svc/user_images/plylst/2021/06/456/23/485219505_org.jpg?tm=20230528080413/melon/resize/500/quality/90/optimize",
+        "authorID": 1,
+        "lastUpdate": "2023-09-09T15:26:45.431932",
+        "viewCount": 0,
+        "niceCount": 0,
+        "tag": ["성인"]
+      }
+    ]
+  },
+    
+  "getComicDetailByNo": {
+    "comicInfo": {
+      "id": 1,
+      "title": "람쥐",
+      "thumbnail": "https://cdnimg.melon.co.kr/svc/user_images/plylst/2021/06/456/23/485219505_org.jpg?tm=20230528080413/melon/resize/500/quality/90/optimize",
+      "authorID": 1,
+      "lastUpdate": "2023-09-09T16:23:07.192729",
+      "viewCount": 0,
+      "niceCount": 0,
+      "tag": null
+    },
+    "episodes": [
+      {
+        "title": "람쥐 의 서브타이틀1",
+        "thumnail": null,
+        "viewCount": 0,
+        "niceCount": 0,
+        "adultOnly": false,
+        "cid": 1
+      },
+      {
+        "title": "람쥐 의 서브타이틀2",
+        "thumnail": null,
+        "viewCount": 0,
+        "niceCount": 0,
+        "adultOnly": false,
+        "cid": 2
+      },
+      {
+        "title": "람쥐 자 드가자~",
+        "thumnail": null,
+        "viewCount": 0,
+        "niceCount": 0,
+        "adultOnly": false,
+        "cid": 3
+      }
+    ]
+  }
+}
