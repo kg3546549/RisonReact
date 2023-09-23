@@ -7,8 +7,10 @@ import Button from '@mui/material/Button'
 
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
+//Import Model
 import ComicDetailJSON from 'Model/ComicDetailJSONModel'
 import EpisodesModel from 'Model/EpisodesModel'
+import { FETCH_STATUS } from "Model/FetchedStatus";
 
 function EpisodeListTile(titleId:number, episode:EpisodesModel, navigate:Function) {
   // 
@@ -74,7 +76,7 @@ function ComicDetailView() {
   let [query, setQuery] = useSearchParams();
 	const [comicsDetail, setComicsDetail] = useState<ComicDetailJSON>();
 
-  const [isFetched, setIsFetched] = useState(false);
+  const [isFetched, setIsFetched] = useState<FETCH_STATUS>(FETCH_STATUS.FAIL);
 	
 	let titleId1:any;
 
@@ -91,14 +93,16 @@ function ComicDetailView() {
     .then(res=>{
       console.log("Fetch Complete : ")
       console.log(res);
-
+      setIsFetched(FETCH_STATUS.COMPLETE);
       setComicsDetail(res);
-      setIsFetched(true);
-    });         
-
+    })
+    .catch(res=>{
+      setIsFetched(FETCH_STATUS.FAIL);
+    });
   }, []);
   
-  if(isFetched==true) { 
+  switch(isFetched) { 
+    case FETCH_STATUS.COMPLETE : 
     return(
         <Box padding={3}>
           <Container>
@@ -183,12 +187,15 @@ function ComicDetailView() {
             </Container>
         </Box>
     );
-  }
-  else {
-    console.log("not Yet")
-    return (
+  
+    case FETCH_STATUS.NOT_YET : return (
       <div>
         rendering
+      </div>
+    );
+    case FETCH_STATUS.FAIL : return (
+      <div>
+        Fetch FAIL
       </div>
     );
   }

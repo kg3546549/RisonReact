@@ -5,7 +5,7 @@
       {
         "id": 1,
         "title": "람쥐",
-        "thumbnail": "https://cdnimg.melon.co.kr/svc/user_images/plylst/2021/06/456/23/485219505_org.jpg?tm=20230528080413/melon/resize/500/quality/90/optimize",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/670152/thumbnail/thumbnail_IMAG21_7149522929097717862.jpg",
         "authorID": 1,
         "lastUpdate": "2023-09-09T15:26:45.250627",
         "viewCount": 0,
@@ -15,7 +15,7 @@
       {
         "id": 2,
         "title": "팤람쥐",
-        "thumbnail": "https://cdnimg.melon.co.kr/svc/user_images/plylst/2021/06/456/23/485219505_org.jpg?tm=20230528080413/melon/resize/500/quality/90/optimize",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/816820/thumbnail/thumbnail_IMAG21_c7321fb7-a53c-41e1-ba19-29c5ff372c6a.jpg",
         "authorID": 1,
         "lastUpdate": "2023-09-09T15:26:45.379965",
         "viewCount": 0,
@@ -25,7 +25,7 @@
       {
         "id": 3,
         "title": "다람쥐",
-        "thumbnail": "https://cdnimg.melon.co.kr/svc/user_images/plylst/2021/06/456/23/485219505_org.jpg?tm=20230528080413/melon/resize/500/quality/90/optimize",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/764623/thumbnail/thumbnail_IMAG21_7305232428546929716.jpg",
         "authorID": 1,
         "lastUpdate": "2023-09-09T15:26:45.403206",
         "viewCount": 0,
@@ -35,13 +35,84 @@
       {
         "id": 4,
         "title": "기타",
-        "thumbnail": "https://cdnimg.melon.co.kr/svc/user_images/plylst/2021/06/456/23/485219505_org.jpg?tm=20230528080413/melon/resize/500/quality/90/optimize",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/783861/thumbnail/thumbnail_IMAG21_7571ae6b-a37c-4d12-8193-cb79c857cfaa.jpg",
+        "authorID": 1,
+        "lastUpdate": "2023-09-09T15:26:45.431932",
+        "viewCount": 0,
+        "niceCount": 0,
+        "tag": ["성인"]
+      },
+      {
+        "id": 5,
+        "title": "기타",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/670152/thumbnail/thumbnail_IMAG21_7149522929097717862.jpg",
+        "authorID": 1,
+        "lastUpdate": "2023-09-09T15:26:45.431932",
+        "viewCount": 0,
+        "niceCount": 0,
+        "tag": ["성인"]
+      },
+      {
+        "id": 6,
+        "title": "기타",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/670152/thumbnail/thumbnail_IMAG21_7149522929097717862.jpg",
+        "authorID": 1,
+        "lastUpdate": "2023-09-09T15:26:45.431932",
+        "viewCount": 0,
+        "niceCount": 0,
+        "tag": ["성인"]
+      },
+      {
+        "id": 7,
+        "title": "기타",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/670152/thumbnail/thumbnail_IMAG21_7149522929097717862.jpg",
+        "authorID": 1,
+        "lastUpdate": "2023-09-09T15:26:45.431932",
+        "viewCount": 0,
+        "niceCount": 0,
+        "tag": ["성인"]
+      },
+      {
+        "id": 8,
+        "title": "기타",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/670152/thumbnail/thumbnail_IMAG21_7149522929097717862.jpg",
+        "authorID": 1,
+        "lastUpdate": "2023-09-09T15:26:45.431932",
+        "viewCount": 0,
+        "niceCount": 0,
+        "tag": ["성인"]
+      },
+      {
+        "id": 9,
+        "title": "기타",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/670152/thumbnail/thumbnail_IMAG21_7149522929097717862.jpg",
+        "authorID": 1,
+        "lastUpdate": "2023-09-09T15:26:45.431932",
+        "viewCount": 0,
+        "niceCount": 0,
+        "tag": ["성인"]
+      },
+      {
+        "id": 10,
+        "title": "기타",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/670152/thumbnail/thumbnail_IMAG21_7149522929097717862.jpg",
+        "authorID": 1,
+        "lastUpdate": "2023-09-09T15:26:45.431932",
+        "viewCount": 0,
+        "niceCount": 0,
+        "tag": ["성인"]
+      },
+      {
+        "id": 11,
+        "title": "기타",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/670152/thumbnail/thumbnail_IMAG21_7149522929097717862.jpg",
         "authorID": 1,
         "lastUpdate": "2023-09-09T15:26:45.431932",
         "viewCount": 0,
         "niceCount": 0,
         "tag": ["성인"]
       }
+
     ]
   },
     
@@ -49,7 +120,7 @@
     "comicInfo": {
       "id": 1,
       "title": "람쥐",
-      "thumbnail": "https://cdnimg.melon.co.kr/svc/user_images/plylst/2021/06/456/23/485219505_org.jpg?tm=20230528080413/melon/resize/500/quality/90/optimize",
+      "thumbnail": "https://image-comic.pstatic.net/webtoon/670152/thumbnail/thumbnail_IMAG21_7149522929097717862.jpg",
       "authorID": 1,
       "lastUpdate": "2023-09-09T16:23:07.192729",
       "viewCount": 0,

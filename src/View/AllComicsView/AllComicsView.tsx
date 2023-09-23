@@ -47,7 +47,7 @@ function HorizontalListTile(comicData:ComicData) {
 function HorizontalListTileFetch(comicData:ComicInfo, navigate:Function) {
     console.log("HorizontalListTileFetch" + comicData)
     return (
-        <Grid item xs={3}>
+        <Grid item xs={2}>
         <Card
             elevation={3}
             style={{
@@ -126,8 +126,7 @@ let SampleData:ComicData[] = MakeSampleData();
 
   switch(isFetched) {
 
-  case FETCH_STATUS.COMPLETE :
-    return(
+    case FETCH_STATUS.COMPLETE : return(
         <Box padding={3}>
             <Container>
             <Grid container spacing={2}>
@@ -158,20 +157,18 @@ let SampleData:ComicData[] = MakeSampleData();
         </Box>
     );
 
-    case FETCH_STATUS.NOT_YET :
-      return(
-          <div>
-              rendering
-          </div>
-      );
-    
-    case FETCH_STATUS.FAIL :
-      return (
+    case FETCH_STATUS.NOT_YET : return(
         <div>
-          Fetch Fail
+            rendering
         </div>
-      );
-    
+    );
+
+    case FETCH_STATUS.FAIL : return (
+    <div>
+        Fetch Fail
+    </div>
+    );
+        
   }
 }
 
