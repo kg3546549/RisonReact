@@ -100,11 +100,15 @@ let SampleData:ComicData[] = MakeSampleData();
   const [allComicList, setAllComicList] = useState<AllComicList>();
   const [isFetched, setIsFetched] = useState<FETCH_STATUS>(FETCH_STATUS.FAIL);
 
-  const URL = `http://ec2-43-201-111-91.ap-northeast-2.compute.amazonaws.com:8080/`;
-  const API = `api/comic/getAllComicList`;
   
+  const URL = process.env.REACT_APP_SERVER_URL
+  const API_URL = process.env.REACT_APP_API_URL
+  const API = `getAllComicList`;
+  
+  console.log(`URL : ${URL}${API_URL}${API}`);
+
   useEffect(()=> {
-    fetch(`${URL}${API}`, {
+    fetch(`${URL}${API_URL}${API}`, {
         method : "GET"   
     })
     .then(res=>res.json())
