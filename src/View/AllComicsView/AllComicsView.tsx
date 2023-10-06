@@ -1,5 +1,5 @@
-import { Fragment, useState, useEffect } from "react";
-import { Rating, Card, CardMedia, CardContent, Box, Grid, Typography, ButtonGroup, Container, IconButton } from "@mui/material";
+import { Fragment, useState, useEffect, Component } from "react";
+import { Chip, Rating, Card, CardMedia, CardContent, Box, Grid, Typography, ButtonGroup, Container, IconButton, Button } from "@mui/material";
 
 import {SortByAlpha, ThumbUp} from '@mui/icons-material/';
 import { useNavigate } from 'react-router-dom';
@@ -12,44 +12,68 @@ import ComicData from 'Model/ComicDataModel'
 import ComicInfo from "Model/ComicInfoModel";
 import { FETCH_STATUS } from "Model/FetchedStatus";
 
-function HorizontalListTile(comicData:ComicData) {
-  
-    
-    return (
-        <Grid item xs={4}>
-        <Card
-            elevation={3}
-            style={{
-                cursor : 'pointer',
-                // borderRadius : 10,
-            }}
-            // onClick={NavigateToComicDetail}
-        >
-            <CardMedia 
-                component="img"
-                image={TestImage} 
-            />
-            <CardContent>
-                <Typography gutterBottom variant="h6">
-                    {comicData.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    {comicData.author}
-                </Typography>
-                <Box height={10}/>
-                <Rating readOnly value={2}/>
-            </CardContent>
-        </Card>
-        </Grid>
-    );
-}
+// function HorizontalListTile(comicData:ComicData) {
+//     return (
+//         <Grid item xs={4}>
+//         <Card
+//             elevation={3}
+//             style={{
+//                 cursor : 'pointer',
+//                 // borderRadius : 10,
+//             }}
+//             // onClick={NavigateToComicDetail}
+//         >
+//             <CardMedia 
+//                 component="img"
+//                 image={TestImage} 
+//             />
+//             <CardContent>
+//                 <Typography gutterBottom variant="h6">
+//                     {comicData.title}
+//                 </Typography>
+//                 <Typography variant="body2" color="text.secondary">
+//                     {comicData.author}
+//                 </Typography>
+//                 <Box height={10}/>
+//                 <Rating readOnly value={2}/>
+//             </CardContent>
+//         </Card>
+//         </Grid>
+//     );
+// }
+
+// function Tags(tags:String[]):[Component] {
+//   const chipSize = "small"
+//   console.log("??:"+tags);
+//   if(tags.length < 4) { //태그 개수가 3개 이하일 떄
+//     console.log("YEAHH");
+
+//     return (
+//       tags.map((c,index)=>{
+//         <Chip key={"tag-"+index} label={c} size={chipSize} style={{margin:1}}/>
+//       })
+//     );
+
+//   }
+//   else {
+//     return (
+//       <div>
+//         <Chip label={tags[0]} size={chipSize} style={{margin:1}}/>
+//         <Chip label={tags[1]} size={chipSize} style={{margin:1}}/>
+//         <Chip label={"..."} size={chipSize} style={{margin:1}}/>
+//       </div>
+//     );
+//   }
+// }
 
 function HorizontalListTileFetch(comicData:ComicInfo, navigate:Function) {
-    console.log("HorizontalListTileFetch" + comicData)
+    // console.log("HorizontalListTileFetch" + comicData)
+    // console.log(comicData.title)
     return (
-        <Grid item xs={2}>
+        <Grid item xs={2} key={"contentCard-"+comicData.id}>
         <Card
-            elevation={3}
+            key={comicData.id}
+            elevation={1}
             style={{
                 cursor : 'pointer',
                 // borderRadius : 10,
@@ -62,14 +86,25 @@ function HorizontalListTileFetch(comicData:ComicInfo, navigate:Function) {
                 image={comicData.thumbnail} 
             />
             <CardContent>
-                <Typography gutterBottom variant="h6">
+                <Typography fontSize={18} fontWeight={800}>
                     {comicData.title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography fontSize={15} color="text.secondary" >
                     {comicData.authorID}
                 </Typography>
-                <Box height={10}/>
-                <Rating readOnly value={2}/>
+                <Box height={3}/>
+                
+
+                {
+                  // Tags(comicData.tag)
+                  comicData.tag.map((c,index)=>{
+                    if(index < 2) {
+                      return <Chip key={"tag-"+index} label={c} size="small" style={{margin:1}}/>
+                    }
+                    
+                  })
+                }
+                
             </CardContent>
         </Card>
         </Grid>
@@ -105,7 +140,7 @@ let SampleData:ComicData[] = MakeSampleData();
   const API_URL = process.env.REACT_APP_API_URL
   const API = `getAllComicList`;
   
-  console.log(`URL : ${URL}${API_URL}${API}`);
+  // console.log(`URL : ${URL}${API_URL}${API}`);
 
   useEffect(()=> {
     fetch(`${URL}${API_URL}${API}`, {
@@ -113,8 +148,8 @@ let SampleData:ComicData[] = MakeSampleData();
     })
     .then(res=>res.json())
     .then(res=>{
-      console.log("Fetch Complete : ")
-      console.log(res);
+      // console.log("Fetch Complete : ")
+      // console.log(res);
       setAllComicList(res);
       setIsFetched(FETCH_STATUS.COMPLETE);
     })

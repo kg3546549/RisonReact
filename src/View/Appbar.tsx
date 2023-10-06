@@ -27,17 +27,17 @@ function Appbar() {
 
     return(
         <Fragment>
-        <AppBar position="static" >
+        <AppBar position="static" elevation={0}>
             <Toolbar>
-
-             
-              
-              <Container >
-              <Button>
-                <Link to="/">
+              {/* <Container > */}
+              {/* <Button> */}
+                {/* <Link to="/">
                   <img src={smLogo} height={20}/>
-                </Link>
-              </Button>
+                </Link> */}
+                <Typography fontWeight={700} fontSize={30}>
+                  RISON
+                </Typography>
+              {/* </Button> */}
               {
                 pages.map((page)=> (
                   <Button 
@@ -45,14 +45,14 @@ function Appbar() {
                     className={classes.MenuButton}
                   >
                     <Link to={page.LinkURL} style={{ textDecoration: 'none' }}>
-                      <Typography variant="subtitle2" color="initial"> 
+                      <Typography variant="subtitle2" color="primary.contrastText"> 
                         {page.MenuName} 
                       </Typography>
                     </Link>
                   </Button>
                 ))
               }
-              </Container>
+              {/* </Container> */}
 
               <Tooltip title="로그인">
                 <Button color="inherit">Login</Button>

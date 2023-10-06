@@ -8,18 +8,24 @@ export const theme = createTheme({
   },
 	palette: {
       primary: {
-        main: "#f2f0eb",
+        // main: "#f2f0eb",
+        main: "#f2f0eb",        
+        contrastText: '#4C4637',
+        // contrastText: '#ffffff',
       },
       secondary: {
         main: "#fcba03",
-      }
+        // main:"#ffffff",
+      },
     }
+    
 });
 
 export const useStyles = makeStyles({
   flexGrow: {
     flex: '1',
   },
+
   MenuButton: {
     borderRadius:5,
     color: '#fff',

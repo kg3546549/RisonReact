@@ -18,7 +18,6 @@ function ReadComicsView() {
 
 	let [query, setQuery] = useSearchParams();
 	
-	
 	let titleId = query.get("titleId");
 	let numOfComicPages = 172;
 	let EpisodeNum = query.get("no");
@@ -33,14 +32,14 @@ function ReadComicsView() {
 		<Container
 			style={{
 				// margin: 'auto'
-				marginTop : 'auto',
-				marginBottom : 'auto'
+				// marginTop : 'auto',
+				// marginBottom : 'auto'
 			}}
 		>
-			<Box height={10}></Box>
+			<Box height={5}></Box>
 			<Swiper
 				style={{
-					// height:'auto',
+					height:"80%",
 					width: 500,
 					// margin: 'auto'
 				}}
@@ -53,16 +52,19 @@ function ReadComicsView() {
 			>
 				{
 					imageArr.map( 
-						(i)=> 
-						<SwiperSlide>
-							<img 
-								style={{
-									width:'100%'
-								}}
-								height={700}
-								src= {uriImages+EpisodeNum+'/'+i+imagesFileExtension}
-							/>  
-						</SwiperSlide>
+						(i)=> {
+						 return (
+							<SwiperSlide>
+								<img 
+									style={{
+										width:'100%'
+									}}
+									height="100%"
+									src= {uriImages+EpisodeNum+'/'+i+imagesFileExtension}
+								/>  
+							</SwiperSlide>
+						);
+						}
 					)
 				} 
 

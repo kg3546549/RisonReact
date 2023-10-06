@@ -4,115 +4,124 @@
     "comicList": [
       {
         "id": 1,
-        "title": "람쥐",
+        "title": "열렙전사",
         "thumbnail": "https://image-comic.pstatic.net/webtoon/670152/thumbnail/thumbnail_IMAG21_7149522929097717862.jpg",
-        "authorID": 1,
+        "authorID": "김세훈",
         "lastUpdate": "2023-09-09T15:26:45.250627",
         "viewCount": 0,
         "niceCount": 0,
-        "tag": ["공포"]
+        "tag": ["액션","개그","게임"]
       },
       {
         "id": 2,
-        "title": "팤람쥐",
+        "title": "키드갱",
         "thumbnail": "https://image-comic.pstatic.net/webtoon/816820/thumbnail/thumbnail_IMAG21_c7321fb7-a53c-41e1-ba19-29c5ff372c6a.jpg",
-        "authorID": 1,
+        "authorID": "신영우",
         "lastUpdate": "2023-09-09T15:26:45.379965",
         "viewCount": 0,
         "niceCount": 0,
-        "tag": ["액션"]
+        "tag": ["개그","가족"]
       },
       {
         "id": 3,
-        "title": "다람쥐",
+        "title": "오로지 오로라",
         "thumbnail": "https://image-comic.pstatic.net/webtoon/764623/thumbnail/thumbnail_IMAG21_7305232428546929716.jpg",
-        "authorID": 1,
+        "authorID": "홍달",
         "lastUpdate": "2023-09-09T15:26:45.403206",
         "viewCount": 0,
         "niceCount": 0,
-        "tag": ["스릴러"]
+        "tag": ["판타지","로맨스","Tag1","Tag2","Tag3","Tag4"]
       },
       {
         "id": 4,
-        "title": "기타",
+        "title": "헤어지면 죽음",
         "thumbnail": "https://image-comic.pstatic.net/webtoon/783861/thumbnail/thumbnail_IMAG21_7571ae6b-a37c-4d12-8193-cb79c857cfaa.jpg",
-        "authorID": 1,
+        "authorID": "봄소희 / KYMA",
         "lastUpdate": "2023-09-09T15:26:45.431932",
         "viewCount": 0,
         "niceCount": 0,
-        "tag": ["성인"]
+        "tag": ["로맨스"]
       },
       {
         "id": 5,
-        "title": "기타",
+        "title": "열렙전사",
         "thumbnail": "https://image-comic.pstatic.net/webtoon/670152/thumbnail/thumbnail_IMAG21_7149522929097717862.jpg",
-        "authorID": 1,
-        "lastUpdate": "2023-09-09T15:26:45.431932",
+        "authorID": "김세훈",
+        "lastUpdate": "2023-09-09T15:26:45.250627",
         "viewCount": 0,
         "niceCount": 0,
-        "tag": ["성인"]
+        "tag": ["액션","개그","게임"]
       },
       {
         "id": 6,
-        "title": "기타",
-        "thumbnail": "https://image-comic.pstatic.net/webtoon/670152/thumbnail/thumbnail_IMAG21_7149522929097717862.jpg",
-        "authorID": 1,
-        "lastUpdate": "2023-09-09T15:26:45.431932",
+        "title": "키드갱",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/816820/thumbnail/thumbnail_IMAG21_c7321fb7-a53c-41e1-ba19-29c5ff372c6a.jpg",
+        "authorID": "신영우",
+        "lastUpdate": "2023-09-09T15:26:45.379965",
         "viewCount": 0,
         "niceCount": 0,
-        "tag": ["성인"]
+        "tag": ["개그","가족"]
       },
       {
         "id": 7,
-        "title": "기타",
-        "thumbnail": "https://image-comic.pstatic.net/webtoon/670152/thumbnail/thumbnail_IMAG21_7149522929097717862.jpg",
-        "authorID": 1,
-        "lastUpdate": "2023-09-09T15:26:45.431932",
+        "title": "오로지 오로라",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/764623/thumbnail/thumbnail_IMAG21_7305232428546929716.jpg",
+        "authorID": "홍달",
+        "lastUpdate": "2023-09-09T15:26:45.403206",
         "viewCount": 0,
         "niceCount": 0,
-        "tag": ["성인"]
+        "tag": ["판타지","로맨스","Tag1","Tag2","Tag3","Tag4"]
       },
       {
         "id": 8,
-        "title": "기타",
-        "thumbnail": "https://image-comic.pstatic.net/webtoon/670152/thumbnail/thumbnail_IMAG21_7149522929097717862.jpg",
-        "authorID": 1,
+        "title": "헤어지면 죽음",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/783861/thumbnail/thumbnail_IMAG21_7571ae6b-a37c-4d12-8193-cb79c857cfaa.jpg",
+        "authorID": "봄소희 / KYMA",
         "lastUpdate": "2023-09-09T15:26:45.431932",
         "viewCount": 0,
         "niceCount": 0,
-        "tag": ["성인"]
+        "tag": ["로맨스"]
       },
       {
         "id": 9,
-        "title": "기타",
+        "title": "열렙전사",
         "thumbnail": "https://image-comic.pstatic.net/webtoon/670152/thumbnail/thumbnail_IMAG21_7149522929097717862.jpg",
-        "authorID": 1,
-        "lastUpdate": "2023-09-09T15:26:45.431932",
+        "authorID": "김세훈",
+        "lastUpdate": "2023-09-09T15:26:45.250627",
         "viewCount": 0,
         "niceCount": 0,
-        "tag": ["성인"]
+        "tag": ["액션","개그","게임"]
       },
       {
         "id": 10,
-        "title": "기타",
-        "thumbnail": "https://image-comic.pstatic.net/webtoon/670152/thumbnail/thumbnail_IMAG21_7149522929097717862.jpg",
-        "authorID": 1,
-        "lastUpdate": "2023-09-09T15:26:45.431932",
+        "title": "키드갱",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/816820/thumbnail/thumbnail_IMAG21_c7321fb7-a53c-41e1-ba19-29c5ff372c6a.jpg",
+        "authorID": "신영우",
+        "lastUpdate": "2023-09-09T15:26:45.379965",
         "viewCount": 0,
         "niceCount": 0,
-        "tag": ["성인"]
+        "tag": ["개그","가족"]
       },
       {
         "id": 11,
-        "title": "기타",
-        "thumbnail": "https://image-comic.pstatic.net/webtoon/670152/thumbnail/thumbnail_IMAG21_7149522929097717862.jpg",
-        "authorID": 1,
+        "title": "오로지 오로라",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/764623/thumbnail/thumbnail_IMAG21_7305232428546929716.jpg",
+        "authorID": "홍달",
+        "lastUpdate": "2023-09-09T15:26:45.403206",
+        "viewCount": 0,
+        "niceCount": 0,
+        "tag": ["판타지","로맨스","Tag1","Tag2","Tag3","Tag4"]
+      },
+      {
+        "id": 12,
+        "title": "헤어지면 죽음",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/783861/thumbnail/thumbnail_IMAG21_7571ae6b-a37c-4d12-8193-cb79c857cfaa.jpg",
+        "authorID": "봄소희 / KYMA",
         "lastUpdate": "2023-09-09T15:26:45.431932",
         "viewCount": 0,
         "niceCount": 0,
-        "tag": ["성인"]
+        "tag": ["로맨스"]
       }
-
     ]
   },
     
@@ -120,8 +129,9 @@
     "comicInfo": {
       "id": 1,
       "title": "람쥐",
-      "thumbnail": "https://image-comic.pstatic.net/webtoon/670152/thumbnail/thumbnail_IMAG21_7149522929097717862.jpg",
-      "authorID": 1,
+      "thumbnail": "https://i.namu.wiki/i/LFUKmPgggKnKF-I4HYMe1u7TGvG-ff_llmEbrUwX-pHHpH7iuSNO2sT0SJazFTjygTV_XR8wYbghjPh6-_vLSg.webp",
+      "author": "작가이름",
+      "description":"람쥐가 모험을 하다가 길거리에서 아주 혼쭐이 나는 이야기임", 
       "lastUpdate": "2023-09-09T16:23:07.192729",
       "viewCount": 0,
       "niceCount": 0,
@@ -129,15 +139,15 @@
     },
     "episodes": [
       {
-        "title": "람쥐 의 서브타이틀1",
-        "thumnail": null,
+        "title": "람쥐 1화",
+        "thumnail": "https://contents.creators.mypetlife.co.kr/content/uploads/2021/09/09100804/img-320.jpg",
         "viewCount": 0,
         "niceCount": 0,
         "adultOnly": false,
         "cid": 1
       },
       {
-        "title": "람쥐 의 서브타이틀2",
+        "title": "람쥐 2화",
         "thumnail": null,
         "viewCount": 0,
         "niceCount": 0,
@@ -145,7 +155,7 @@
         "cid": 2
       },
       {
-        "title": "람쥐 자 드가자~",
+        "title": "람쥐 3화",
         "thumnail": null,
         "viewCount": 0,
         "niceCount": 0,
