@@ -3,7 +3,12 @@ import {AppBar, Toolbar, Button, Container, Typography, Tooltip} from '@mui/mate
 import { Link } from 'react-router-dom'
 import {useStyles} from 'Theme/Theme';
 
+
 import smLogo from 'assets/Logo2.png'
+import { useSelector, useDispatch } from 'react-redux';
+import { SignInUser, SignOutUser, UserSign } from "Reducer/LoginReducer";
+import { RootState } from 'Reducer/index';
+
 
 const pages = [
     
@@ -25,6 +30,19 @@ const pages = [
 function Appbar() {
     const classes = useStyles();
 
+    //Change 언젠가.....ㅠㅠㅠㅠㅠ
+
+    const SignUser = useSelector((state:RootState) => state.SignUser);
+
+    const dispatch = useDispatch();
+    let user:UserSign = {
+      ID : "kg3546549",
+      accessToken : "!@#$"
+    }
+    
+    const onSignIn = () => dispatch(SignInUser(user));
+    const onSignOut = () => dispatch(SignOutUser(SignUser.accessToken));
+    
     return(
         <Fragment>
         <AppBar position="static" elevation={0}>
@@ -54,9 +72,25 @@ function Appbar() {
               }
               {/* </Container> */}
 
-              <Tooltip title="로그인">
-                <Button color="inherit">Login</Button>
-              </Tooltip>
+              
+
+                {
+                  
+                  SignUser.curSignIn==false? 
+                  <Button color="inherit"
+                    onClick={onSignIn}
+                  >
+                    Login
+                  </Button>
+                   : 
+                  <Button color="inherit"
+                    onClick={onSignOut}
+                  >
+                    LogOut
+                  </Button>
+                }
+
+              
               
             </Toolbar>
           </AppBar>
