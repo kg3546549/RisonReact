@@ -31,7 +31,7 @@ function App() {
             <Route path="/AllComics" element={<AllComicsView/>}/>
             <Route path="/ComicDetail" element={<ComicDetailView/>}/>
             <Route path="/ComicsRead" element={<ReadComicsView/>}/>
-            <Route path="/login" element={<LoginView/>}/>
+            <Route path="/login" element={<LoginView open={false} onClose={()=>{}}/>}/>
           </Routes>
           
         </BrowserRouter>

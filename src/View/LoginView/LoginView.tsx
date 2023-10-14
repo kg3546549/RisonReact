@@ -2,8 +2,13 @@ import * as React from 'react';
 import {Dialog, DialogTitle, Box, Container, Typography, Grid, Link, Checkbox, FormControlLabel, TextField, CssBaseline, Button, Avatar, Paper} from '@mui/material/'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { SignInUser, SignOutUser, UserSign } from "Reducer/LoginReducer";
+import { RootState } from 'Reducer/index';
 
 import {LockOutlined} from '@mui/icons-material/';
+import { warning } from '@remix-run/router/dist/history';
+import { red } from '@mui/material/colors';
 
 export interface SimpleDialogProps {
   open: boolean;
@@ -25,22 +30,51 @@ export function LoginDialogView(props: SimpleDialogProps) {
     <Dialog
       onClose={handleClose} open={open}
     >
-      <LoginView/>
+      <LoginView onClose={onClose} open={open} />
     </Dialog>
   );
   
 
 }
 
-export function LoginView() {
+export function LoginView(props: SimpleDialogProps) {
+
+  const [resultString, setResultString] = React.useState('');
+
+  const { onClose, open } = props;
+
+  const SignUser = useSelector((state:RootState) => state.SignUser);
+  const dispatch = useDispatch();
+
+
+  const onSignIn = (user:UserSign) => dispatch(SignInUser(user));
+  const onSignOut = () => dispatch(SignOutUser(SignUser.accessToken));
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
+
+    const userData = {
+      ID: data.get('id'),
       password: data.get('password'),
-    });
+    };
+    console.log(userData);
+
+    if(userData.ID != 'asdf' || userData.password != 'asdf') {
+      console.log("Login Fail!!!");
+      setResultString("사용자 정보를 찾을 수 없습니다.");
+      return;
+    }
+
+    onSignIn(
+      {
+        ID : userData.ID,
+        accessToken : "!@#$",
+      }
+    );
+    
+    onClose();
+
   };
 
   return (
@@ -84,8 +118,12 @@ export function LoginView() {
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="secondary" />}
-              label="Remember me"
+              label="정보 기억하기"
             />
+            <Typography variant="caption" color={red[900]} fontWeight={900}>
+              {resultString}
+            </Typography>
+
             <Button
               type="submit"
               fullWidth
@@ -97,12 +135,12 @@ export function LoginView() {
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2" color="secondary">
-                  Forgot password?
+                  비밀번호를 잃어버렸나요?
                 </Link>
               </Grid>
               <Grid item>
                 <Link href="#" variant="body2" color="secondary">
-                  {"Don't have an account? Sign Up"}
+                  {"회원가입"}
                 </Link>
               </Grid>
             </Grid>
