@@ -4,6 +4,8 @@ import Box from '@mui/material/Box';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import { Provider } from 'react-redux'
+
 import smLogo from './assets/Logo2.png'
 
 import {useStyles} from './Theme/Theme';
@@ -13,6 +15,7 @@ import TodayHotView from 'View/MainView/TodayHotView';
 import AllComicsView from 'View/AllComicsView/AllComicsView';
 import ComicDetailView from 'View/ComicDetailView/ComicDetailView';
 import ReadComicsView from 'View/ReadComicsView/ReadComisView'
+import LoginView from 'View/LoginView/LoginView'
 import Appbar from 'View/Appbar'
 
 
@@ -28,6 +31,7 @@ function App() {
             <Route path="/AllComics" element={<AllComicsView/>}/>
             <Route path="/ComicDetail" element={<ComicDetailView/>}/>
             <Route path="/ComicsRead" element={<ReadComicsView/>}/>
+            <Route path="/login" element={<LoginView/>}/>
           </Routes>
           
         </BrowserRouter>

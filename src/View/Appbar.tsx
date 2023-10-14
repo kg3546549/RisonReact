@@ -55,7 +55,11 @@ function Appbar() {
               {/* </Container> */}
 
               <Tooltip title="로그인">
-                <Button color="inherit">Login</Button>
+                <Button color="inherit">
+                  <Link to={"login"} style={{ textDecoration: 'none' }}>
+                    Login
+                  </Link>
+                </Button>
               </Tooltip>
               
             </Toolbar>
