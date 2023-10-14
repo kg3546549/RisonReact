@@ -30,18 +30,16 @@ function ReadComicsView() {
 
 	return(
 		<Container
-			style={{
-				// margin: 'auto'
-				// marginTop : 'auto',
-				// marginBottom : 'auto'
+			sx={{
+
+				
 			}}
 		>
-			<Box height={5}></Box>
+			<Box height={5}/>
 			<Swiper
 				style={{
-					height:"80%",
-					width: 500,
-					// margin: 'auto'
+					height:"90vh",
+					width:"60vh",
 				}}
 				pagination={{
           type: 'progressbar',
@@ -57,8 +55,9 @@ function ReadComicsView() {
 							<SwiperSlide>
 								<img 
 									style={{
-										width:'100%'
+										
 									}}
+									width='100%'
 									height="100%"
 									src= {uriImages+EpisodeNum+'/'+i+imagesFileExtension}
 								/>  
