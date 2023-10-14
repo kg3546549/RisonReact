@@ -15,7 +15,7 @@ import TodayHotView from 'View/MainView/TodayHotView';
 import AllComicsView from 'View/AllComicsView/AllComicsView';
 import ComicDetailView from 'View/ComicDetailView/ComicDetailView';
 import ReadComicsView from 'View/ReadComicsView/ReadComisView'
-import LoginView from 'View/LoginView/LoginView'
+import {LoginView} from 'View/LoginView/LoginView'
 import Appbar from 'View/Appbar'
 
 

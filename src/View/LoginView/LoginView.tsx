@@ -1,11 +1,38 @@
 import * as React from 'react';
-import {Box, Container, Typography, Grid, Link, Checkbox, FormControlLabel, TextField, CssBaseline, Button, Avatar} from '@mui/material/'
+import {Dialog, DialogTitle, Box, Container, Typography, Grid, Link, Checkbox, FormControlLabel, TextField, CssBaseline, Button, Avatar, Paper} from '@mui/material/'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
 import {LockOutlined} from '@mui/icons-material/';
 
-export default function LoginView() {
+export interface SimpleDialogProps {
+  open: boolean;
+  onClose: () => void;
+}
+
+export function LoginDialogView(props: SimpleDialogProps) {
+  const { onClose, open } = props;
+
+  const handleClose = () => {
+    onClose();
+  };
+
+  const handleListItemClick = () => {
+    onClose();
+  };
+
+  return(
+    <Dialog
+      onClose={handleClose} open={open}
+    >
+      <LoginView/>
+    </Dialog>
+  );
+  
+
+}
+
+export function LoginView() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -22,7 +49,7 @@ export default function LoginView() {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            margin: 3,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',

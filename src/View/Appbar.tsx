@@ -1,6 +1,6 @@
-import { Fragment } from "react";
-import {AppBar, Toolbar, Button, Container, Typography, Tooltip} from '@mui/material'
-import { Link } from 'react-router-dom'
+import { Fragment, useState } from "react";
+import {Dialog, AppBar, Toolbar, Button, Container, Typography, Tooltip} from '@mui/material'
+import { Link, useNavigate } from 'react-router-dom'
 import {useStyles} from 'Theme/Theme';
 
 
@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { SignInUser, SignOutUser, UserSign } from "Reducer/LoginReducer";
 import { RootState } from 'Reducer/index';
 
+import { LoginDialogView } from "./LoginView/LoginView";
 
 const pages = [
     
@@ -30,6 +31,15 @@ const pages = [
 function Appbar() {
     const classes = useStyles();
 
+
+    const [dialogOpen, setDialogOpen] = useState(false);
+    const handleClose = () => {
+      setDialogOpen(false);
+    };
+    const handleOpen = () => {
+      setDialogOpen(true);
+    };
+
     //Change 언젠가.....ㅠㅠㅠㅠㅠ
 
     const SignUser = useSelector((state:RootState) => state.SignUser);
@@ -42,20 +52,31 @@ function Appbar() {
     
     const onSignIn = () => dispatch(SignInUser(user));
     const onSignOut = () => dispatch(SignOutUser(SignUser.accessToken));
+    const navigate = useNavigate();
     
     return(
         <Fragment>
         <AppBar position="static" elevation={0}>
             <Toolbar>
-              {/* <Container > */}
+              
               {/* <Button> */}
                 {/* <Link to="/">
                   <img src={smLogo} height={20}/>
                 </Link> */}
-                <Typography fontWeight={700} fontSize={30}>
+                <Typography 
+                  onClick={()=>{
+                    navigate('/');
+                  }} 
+                  sx={{
+                    cursor:'pointer',
+                  }}
+                  fontWeight={700} 
+                  fontSize={30}>
                   RISON
                 </Typography>
               {/* </Button> */}
+              
+              {/* <Container > */}
               {
                 pages.map((page)=> (
                   <Button 
@@ -72,16 +93,19 @@ function Appbar() {
               }
               {/* </Container> */}
 
-              
-
                 {
                   
                   SignUser.curSignIn==false? 
+                  <Fragment>
                   <Button color="inherit"
-                    onClick={onSignIn}
+                    
+                    // onClick={onSignIn}
+                    onClick = {handleOpen}
                   >
                     Login
                   </Button>
+                  
+                  </Fragment>
                    : 
                   <Button color="inherit"
                     onClick={onSignOut}
@@ -90,7 +114,10 @@ function Appbar() {
                   </Button>
                 }
 
-              
+              <LoginDialogView 
+                open={dialogOpen}
+                onClose={handleClose}
+              />
               
             </Toolbar>
           </AppBar>
