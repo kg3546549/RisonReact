@@ -109,7 +109,7 @@ function ComicDetailView() {
       return(
         <Box>
           <Box
-            height={"30vh"}
+            height={"300px"}
           >
             <Box
               sx={{

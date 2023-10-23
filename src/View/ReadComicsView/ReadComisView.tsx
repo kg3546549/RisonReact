@@ -1,5 +1,6 @@
 
 
+import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import {useStyles} from 'Theme/Theme';
@@ -19,14 +20,21 @@ function ReadComicsView() {
 	let [query, setQuery] = useSearchParams();
 	
 	let titleId = query.get("titleId");
-	let numOfComicPages = 172;
+	let numOfComicPages = 67;
 	let EpisodeNum = query.get("no");
 	let imageArr =  Array.from({length: numOfComicPages}, (v, i) => i+1);
-	let uriImages = "http://kg3546549.duckdns.org:3030/Taiyou%20no%20ie/";
-	let imagesFileExtension = ".jpg";
+	// let uriImages = "http://kg3546549.duckdns.org:3030/Taiyou%20no%20ie/";
+	let uriImages = "http://119.192.158.85:3030/C1/";
+	let urlVoice = "http://119.192.158.85:3030/C1/";
+	// let imagesFileExtension = ".jpg";
+	let imagesFileExtension = ".webp";
+	let voiceFileExtension = ".m4a";
 
 
 	const classes = useStyles();
+
+	const [curPage,setCurPage] = useState(0);
+
 
 	return(
 		<Container
@@ -35,6 +43,7 @@ function ReadComicsView() {
 				
 			}}
 		>
+			
 			<Box height={5}/>
 			<Swiper
 				style={{
@@ -47,19 +56,28 @@ function ReadComicsView() {
         }}
 				navigation 
 				modules={[Navigation, Pagination]}
+				onSlideChange={(swiper)=>{
+					console.log(swiper);
+					setCurPage(swiper.activeIndex);
+				}}
 			>
 				{
 					imageArr.map( 
 						(i)=> {
 						 return (
 							<SwiperSlide>
+								{
+									i==curPage   ?
+									<audio src={urlVoice+'/'+i+voiceFileExtension} autoPlay/> : 
+									<div/>
+								}
 								<img 
 									style={{
 										
 									}}
 									width='100%'
 									height="100%"
-									src= {uriImages+EpisodeNum+'/'+i+imagesFileExtension}
+									src= {uriImages+'/'+i+imagesFileExtension}
 								/>  
 							</SwiperSlide>
 						);
