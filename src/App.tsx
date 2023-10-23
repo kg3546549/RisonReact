@@ -15,8 +15,9 @@ import TodayHotView from 'View/MainView/TodayHotView';
 import AllComicsView from 'View/AllComicsView/AllComicsView';
 import ComicDetailView from 'View/ComicDetailView/ComicDetailView';
 import ReadComicsView from 'View/ReadComicsView/ReadComisView'
-import {LoginView} from 'View/LoginView/LoginView'
-import Appbar from 'View/Appbar'
+import {LoginView} from 'View/LoginView/LoginView';
+import Appbar from 'View/Appbar/Appbar';
+import { UserPageView } from 'View/UserPageView/UserPageView';
 
 
 function App() {
@@ -32,6 +33,9 @@ function App() {
             <Route path="/ComicDetail" element={<ComicDetailView/>}/>
             <Route path="/ComicsRead" element={<ReadComicsView/>}/>
             <Route path="/login" element={<LoginView open={false} onClose={()=>{}}/>}/>
+
+            <Route path="/myprofile" element={<UserPageView/>}/>
+
           </Routes>
           
         </BrowserRouter>
