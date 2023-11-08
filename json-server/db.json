@@ -163,5 +163,61 @@
         "cid": 3
       }
     ]
+  }, 
+
+  "getComicRanking": {
+    "rankingType": "TopSell",
+    "comicList": [
+      {
+        "id": 1,
+        "title": "열렙전사",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/670152/thumbnail/thumbnail_IMAG21_7149522929097717862.jpg",
+        "authorID": "김세훈",
+        "lastUpdate": "2023-09-09T15:26:45.250627",
+        "viewCount": 0,
+        "niceCount": 0,
+        "tag": ["액션","개그","게임"]
+      },
+      {
+        "id": 2,
+        "title": "키드갱",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/816820/thumbnail/thumbnail_IMAG21_c7321fb7-a53c-41e1-ba19-29c5ff372c6a.jpg",
+        "authorID": "신영우",
+        "lastUpdate": "2023-09-09T15:26:45.379965",
+        "viewCount": 0,
+        "niceCount": 0,
+        "tag": ["개그","가족"]
+      },
+      {
+        "id": 3,
+        "title": "오로지 오로라",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/764623/thumbnail/thumbnail_IMAG21_7305232428546929716.jpg",
+        "authorID": "홍달",
+        "lastUpdate": "2023-09-09T15:26:45.403206",
+        "viewCount": 0,
+        "niceCount": 0,
+        "tag": ["판타지","로맨스","Tag1","Tag2","Tag3","Tag4"]
+      },
+      {
+        "id": 4,
+        "title": "헤어지면 죽음",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/783861/thumbnail/thumbnail_IMAG21_7571ae6b-a37c-4d12-8193-cb79c857cfaa.jpg",
+        "authorID": "봄소희 / KYMA",
+        "lastUpdate": "2023-09-09T15:26:45.431932",
+        "viewCount": 0,
+        "niceCount": 0,
+        "tag": ["로맨스"]
+      },
+      {
+        "id": 5,
+        "title": "열렙전사",
+        "thumbnail": "https://image-comic.pstatic.net/webtoon/670152/thumbnail/thumbnail_IMAG21_7149522929097717862.jpg",
+        "authorID": "김세훈",
+        "lastUpdate": "2023-09-09T15:26:45.250627",
+        "viewCount": 0,
+        "niceCount": 0,
+        "tag": ["액션","개그","게임"]
+      }
+    ]
   }
 }

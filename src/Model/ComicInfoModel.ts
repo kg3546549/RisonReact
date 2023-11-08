@@ -1,4 +1,4 @@
-export default interface ComicInfo     {
+export default interface ComicInfo {
   "id": number,
   "title": string,
   "thumbnail": string,

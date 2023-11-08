@@ -1,4 +1,4 @@
-export default class Comic {
+export default class ComicData {
     title:string;
     author:string;
     id:number;

@@ -1,11 +1,11 @@
 import { Fragment, useState } from "react";
-import {Box, Menu, MenuItem, AppBar, Toolbar, Button, Container, Typography, Tooltip, IconButton} from '@mui/material'
+import {Paper, InputBase,Divider, Box, Menu, MenuItem, AppBar, Toolbar, Button, Container, Typography, Tooltip, IconButton} from '@mui/material'
 import { Link, useNavigate } from 'react-router-dom'
 import {useStyles} from 'Theme/Theme';
 
-
-import smLogo from 'assets/Logo2.png'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import SearchIcon from '@mui/icons-material/Search';
+
 import { useSelector, useDispatch } from 'react-redux';
 import { SignInUser, SignOutUser, UserSign } from "Reducer/LoginReducer";
 import { RootState } from 'Reducer/index';
@@ -89,7 +89,7 @@ function Appbar() {
               
               {/* <Container > */}
               <Box sx={{ flexGrow: 1 }}>
-              {
+              {/* {
                 pages.map((page)=> (
                   <Button 
                     variant='outlined'
@@ -110,7 +110,53 @@ function Appbar() {
                     </Typography>
                   </Button>
                 ))
-              }
+              } */}
+              <Container maxWidth="sm">
+              {/* <TextField
+                id="outlined-select-currency"
+                fullWidth
+                
+                InputProps={{
+                  sx: {
+                    borderTopLeftRadius: 100,
+                    borderBottomLeftRadius: 100,
+                    height: 30,
+                    backgroundColor:"white",
+                  },
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <SearchIcon />
+                    </InputAdornment>
+                  ),
+                  
+                }}
+                
+              >
+              </TextField> */}
+
+              <Paper
+                component="form"
+                sx={{ height:35, p: '2px 8px', display: 'flex', alignItems: 'center', borderRadius:100 }}
+                elevation={0}
+              >
+                <InputBase
+                  sx={{ ml: 1, flex: 1 }}
+                  placeholder="검색"
+                  inputProps={{ 'aria-label': 'search' }}
+                />
+                
+                <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+                <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+                  <SearchIcon />
+                </IconButton>
+              </Paper>
+
+
+              {/* <Button sx={{display:"inline"}} variant="contained" endIcon={<SearchIcon />}/> */}
+
+              </Container>
+              
+
               </Box>
 
               {/* User Icon Button */}
